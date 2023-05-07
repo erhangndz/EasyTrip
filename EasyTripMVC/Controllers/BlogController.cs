@@ -29,5 +29,18 @@ namespace EasyTripMVC.Controllers
             bc.comments=c.Comments.Where(x=>x.BlogID==id).ToList();
             return View(bc);
         }
+        [HttpGet]
+        public PartialViewResult MakeComment(int id)
+        {
+            ViewBag.id=id;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult MakeComment(Comment p) 
+        {
+            c.Comments.Add(p);
+            c.SaveChanges();
+            return PartialView();
+        }
     }
 }

@@ -90,15 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </ul>
                 }
                
-                <div class="content-form">
-                    <h3>Bir Yorum Yazın</h3>
-                    <form>
-                        <input type="text" placeholder="Adınız" required />
-                        <input type="text" placeholder="Email Adresiniz" required />
-                        <textarea placeholder="Mesajınızı Yazın "></textarea>
-                        <input type="submit" value="Gönder" />
-                    </form>
-                </div>
+                @Html.Action("MakeComment","Blog")
             </div>
 
     

@@ -1,0 +1,35 @@
+﻿@model List<EasyTripMVC.Models.Classes.Comment>
+@{
+    ViewBag.Title = "Comments";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Yorum Listesi</h3>
+<table class="table table-striped">
+    <tr>
+        
+        <th>İsim</th>
+        <th>E-Mail</th>
+        <th>Blog</th>
+        <th>Yorum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+          
+            <td>@item.Name</td>
+            <td>@item.Mail</td>
+            <td>@item.Blog.Title</td>
+            <td>@item.Comments</td>
+            <td><a href="/Admin/DeleteComment/@item.CommentID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateComment/@item.CommentID" class="btn btn-outline-success">Güncelle</a></td>
+            
+        </tr>
+    }
+
+
+</table>
+

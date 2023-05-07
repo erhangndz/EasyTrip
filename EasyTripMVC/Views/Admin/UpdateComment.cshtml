@@ -1,0 +1,25 @@
+﻿@model EasyTripMVC.Models.Classes.Comment
+@{
+    ViewBag.Title = "UpdateComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container"> Yorum Güncelleme Sayfası</h3>
+
+<form class="form-group" method="post">
+    @Html.HiddenFor(x => x.CommentID)
+    <label>İsim</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>E-Mail</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <label>Blog</label>
+    @Html.TextBoxFor(x => x.Blog.Title, new { @class = "form-control" })
+    <br />
+    <label>Yorum</label>
+    @Html.TextAreaFor(x => x.Comments, 12, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+
+</form>

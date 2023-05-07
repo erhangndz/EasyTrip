@@ -64,7 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <img src="@item.BlogImage" alt="" />
                         <a href="/Blog/BlogDetails/@item.BlogID">@item.Title </a>
                         <p>
-                            @item.Description
+                            @item.Description.Substring(0,500)
                         </p>
                     </div>
 

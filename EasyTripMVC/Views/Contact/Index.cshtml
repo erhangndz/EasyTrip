@@ -1,0 +1,56 @@
+﻿@model EasyTripMVC.Models.Classes.Contact
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<div class="contact">
+    <div class="wrap">
+        <div class="contact-top">
+            <h3>İletişim Bilgileri</h3>
+            <p> Benimle iletişim kurmak isterseniz aşağıdaki panelden bana mesaj gönderebilirsiniz.</p>
+        </div>
+        <div class="form">
+            <form class="cmxform" id="contactForm" method="post">
+                <div>
+                    <input type="text" class="textbox" required="" name="NameSurname" placeholder="İsminiz:" >
+                </div>
+                <div>
+                    <input type="text" class="textbox" placeholder="Email Adresiniz:" required="" name="Email" >
+                </div>
+                <div>
+                    <input type="text" class="textbox" placeholder="Konu:" name="Subject" required="" >
+                </div>
+              
+                <div class="form1">
+      
+                        <textarea  placeholder="Mesajınızı Yazın" required="" name="Message" > </textarea>
+                    
+                </div>
+                <p><button class="read">Gönder</button></p>
+            </form>
+        </div>
+       
+           
+       
+        <div class="clear"></div>
+        <div class="contact-bottom">
+            <div class="contact-left">
+                <div class="contact-add">
+                    <h3>Adres</h3>
+                    <p> Çankaya/Ankara</p>
+                    <p>Telephone:0541 882 19 05</p>
+                  
+                    <p>Email:<a href="mailto:erhangndz@live.com">erhangndz@live.com</a></p>
+                </div>
+                
+            </div>
+            <div class="contact-map">
+                <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A" style="color: #555;text-align:left">View Larger Map</a></small>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
