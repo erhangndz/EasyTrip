@@ -127,6 +127,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -135,11 +138,16 @@
     <Compile Include="Migrations\202305060943371_mig1.designer.cs">
       <DependentUpon>202305060943371_mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305061224072_mig_diagram.cs" />
+    <Compile Include="Migrations\202305061224072_mig_diagram.designer.cs">
+      <DependentUpon>202305061224072_mig_diagram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classes\About.cs" />
     <Compile Include="Models\Classes\Address.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
     <Compile Include="Models\Classes\Blog.cs" />
+    <Compile Include="Models\Classes\BlogComment.cs" />
     <Compile Include="Models\Classes\Comment.cs" />
     <Compile Include="Models\Classes\Contact.cs" />
     <Compile Include="Models\Classes\Context.cs" />
@@ -147,6 +155,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Blog\web\about.html" />
+    <Content Include="Content\Blog\web\contact.html" />
+    <Content Include="Content\Blog\web\css\bootstrap.css" />
+    <Content Include="Content\Blog\web\css\style.css" />
+    <Content Include="Content\Blog\web\images\avatar.png" />
+    <Content Include="Content\Blog\web\images\icon3.png" />
+    <Content Include="Content\Blog\web\images\logo.jpg" />
+    <Content Include="Content\Blog\web\images\man.jpg" />
+    <Content Include="Content\Blog\web\images\more.png" />
+    <Content Include="Content\Blog\web\images\post1.jpg" />
+    <Content Include="Content\Blog\web\images\post2.jpg" />
+    <Content Include="Content\Blog\web\images\post3.jpg" />
+    <Content Include="Content\Blog\web\images\search.png" />
+    <Content Include="Content\Blog\web\index.html" />
+    <Content Include="Content\Blog\web\js\easing.js" />
+    <Content Include="Content\Blog\web\js\jquery.min.js" />
+    <Content Include="Content\Blog\web\js\move-top.js" />
+    <Content Include="Content\Blog\web\single.html" />
+    <Content Include="Content\Blog\web\w3layouts-License.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -163,6 +190,44 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\darkpan\404.html" />
+    <Content Include="Content\darkpan\blank.html" />
+    <Content Include="Content\darkpan\button.html" />
+    <Content Include="Content\darkpan\chart.html" />
+    <Content Include="Content\darkpan\css\bootstrap.min.css" />
+    <Content Include="Content\darkpan\css\style.css" />
+    <Content Include="Content\darkpan\element.html" />
+    <Content Include="Content\darkpan\form.html" />
+    <Content Include="Content\darkpan\img\testimonial-1.jpg" />
+    <Content Include="Content\darkpan\img\testimonial-2.jpg" />
+    <Content Include="Content\darkpan\img\user.jpg" />
+    <Content Include="Content\darkpan\index.html" />
+    <Content Include="Content\darkpan\js\main.js" />
+    <Content Include="Content\darkpan\lib\chart\chart.min.js" />
+    <Content Include="Content\darkpan\lib\easing\easing.js" />
+    <Content Include="Content\darkpan\lib\easing\easing.min.js" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\darkpan\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\darkpan\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\darkpan\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\darkpan\lib\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="Content\darkpan\lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Content\darkpan\lib\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="Content\darkpan\lib\tempusdominus\js\moment.min.js" />
+    <Content Include="Content\darkpan\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="Content\darkpan\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Content\darkpan\lib\waypoints\waypoints.min.js" />
+    <Content Include="Content\darkpan\signin.html" />
+    <Content Include="Content\darkpan\signup.html" />
+    <Content Include="Content\darkpan\table.html" />
+    <Content Include="Content\darkpan\typography.html" />
+    <Content Include="Content\darkpan\widget.html" />
     <Content Include="Content\web\about.html" />
     <Content Include="Content\web\contact.html" />
     <Content Include="Content\web\css\slider.css" />
@@ -209,6 +274,90 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\darkpan\lib\owlcarousel\LICENSE" />
+    <Content Include="Content\darkpan\lib\waypoints\links.php" />
+    <Content Include="Content\darkpan\scss\bootstrap.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\darkpan\scss\bootstrap\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -233,7 +382,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetails.cshtml" />
+    <Content Include="Views\Home\PartialFeature.cshtml" />
+    <Content Include="Views\Home\PartialTop10.cshtml" />
+    <Content Include="Views\Home\PartialPlaces.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\BlogIndex.cshtml" />
+    <Content Include="Views\Admin\AddBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +425,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202305060943371_mig1.resx">
       <DependentUpon>202305060943371_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305061224072_mig_diagram.resx">
+      <DependentUpon>202305061224072_mig_diagram.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

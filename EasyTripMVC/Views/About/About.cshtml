@@ -1,0 +1,19 @@
+﻿@model List<EasyTripMVC.Models.Classes.About>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımızda</h3>
+            @foreach (var item in Model)
+            {
+            <img src="@item.ImageURL" alt="" />
+            <p>@item.Description </p>
+            }
+        </div>
+    </div>
+</div>
+

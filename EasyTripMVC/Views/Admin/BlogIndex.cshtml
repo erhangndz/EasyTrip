@@ -1,0 +1,30 @@
+﻿@model List<EasyTripMVC.Models.Classes.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="container">Blog Listesi</h3>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <th>@item.BlogID</th>
+                    <td>@item.Title</td>
+                    <td><a href="/Admin/DeleteBlog/@item.BlogID" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a href="/Admin/DeleteBlog/@item.BlogID" class="btn btn-outline-success">Güncelle</a></td>
+                    <td><a href="/Admin/DeleteBlog/@item.BlogID" class="btn btn-outline-warning">Detaylar</a></td>
+                </tr>
+            }
+    
+    
+    </table>
+<a href="/Admin/AddBlog" class="btn btn-outline-info">Yeni Blog Girişi</a>
+

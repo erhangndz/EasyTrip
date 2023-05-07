@@ -12,6 +12,6 @@ namespace EasyTripMVC.Models.Classes
         public string Mail { get; set; }
         public string Comments { get; set; }
         public int BlogID { get; set; }
-       public Blog Blog { get; set; }
+       public virtual Blog Blog { get; set; }
     }
 }

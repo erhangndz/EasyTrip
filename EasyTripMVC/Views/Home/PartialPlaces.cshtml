@@ -1,0 +1,31 @@
+﻿@model EasyTripMVC.Models.Classes.BlogComment
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach(var item in Model.blogs)
+        {
+        <div class="bot-img">
+            <img src="@item.BlogImage" alt="" />
+        </div>
+        <div class="bot-desc">
+            <p>@item.Description.Substring(0,80) ... </p>
+        </div>
+        <div class="clear"></div>
+        }
+        <div class="clear"></div>
+    </div>
+    
+    <div class="box1-left">
+        @foreach (var item in Model.blogs2)
+        {
+            <div class="bot-img">
+                <img  src="@item.BlogImage" alt="" />
+            </div>
+            <div class="bot-desc1">
+                <p>@item.Description.Substring(0,80) ... </p>
+            </div>
+            <div class="clear"></div>
+        }
+       
+    </div>
+</div>
